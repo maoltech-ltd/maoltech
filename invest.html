@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invest in Maoltech — NaijUp, AWOL Energy &amp; ShareDrive</title>
+  <meta name="description" content="Invest in Maoltech or one of its products: NaijUp (finance), AWOL Energy (solar &amp; e-mobility) and ShareDrive (carpooling). Send us your investment interest." />
+  <meta name="theme-color" content="#0b0b0b" />
+  <meta property="og:title" content="Invest in Maoltech" />
+  <meta property="og:description" content="Back a Nigerian tech company building products in finance, green energy and mobility." />
+  <meta property="og:type" content="website" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-933643807"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-933643807');
+  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFC700'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='900' font-size='36' fill='%230b0b0b'%3EM%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --yellow: #FFC700;
+      --yellow-soft: #FFE27A;
+      --black: #0b0b0b;
+      --ink: #141414;
+      --ink-2: #1d1d1d;
+      --line: #2a2a2a;
+      --text: #f5f5f5;
+      --muted: #b5b5b5;
+      --radius: 16px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--black);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; }
+    .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    .y { color: var(--yellow); }
+
+    /* ---------- Nav ---------- */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(11, 11, 11, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
+    .brand-mark {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--yellow); color: var(--black);
+      display: grid; place-items: center; font-weight: 900; font-size: 1.15rem;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--muted); font-weight: 500; font-size: 0.95rem; transition: color .2s; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--yellow); }
+    .nav-links .btn { color: var(--black); }
+    .menu-toggle { display: none; background: none; border: 0; color: var(--text); cursor: pointer; padding: 8px; }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--yellow); color: var(--black);
+      font-weight: 700; padding: 12px 22px; border-radius: 999px;
+      border: 2px solid var(--yellow);
+      transition: transform .15s, background .2s, color .2s;
+    }
+    .btn:hover { transform: translateY(-2px); background: var(--yellow-soft); border-color: var(--yellow-soft); }
+    .btn-outline { background: transparent; color: var(--yellow); }
+    .btn-outline:hover { background: var(--yellow); color: var(--black); }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; padding: 110px 0 100px; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(700px 360px at 80% 20%, rgba(255, 199, 0, .2), transparent 70%),
+        radial-gradient(500px 260px at 0% 100%, rgba(255, 199, 0, .08), transparent 70%),
+        linear-gradient(transparent 95%, rgba(255,255,255,.04) 95%) 0 0 / 100% 40px,
+        linear-gradient(90deg, transparent 95%, rgba(255,255,255,.04) 95%) 0 0 / 40px 100%;
+      pointer-events: none;
+    }
+    .hero .container { position: relative; display: grid; grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: center; }
+    .eyebrow {
+      display: inline-block; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--yellow); border: 1px solid rgba(255,199,0,.4); border-radius: 999px; padding: 6px 14px; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.6vw, 4.2rem); line-height: 1.07; font-weight: 900; letter-spacing: -0.035em;
+      margin-bottom: 24px;
+    }
+    .hero h1 .hl { background: var(--yellow); color: var(--black); padding: 0 .18em; border-radius: 8px; }
+    .hero p.lead { font-size: 1.2rem; color: var(--muted); max-width: 600px; margin-bottom: 36px; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    /* Hero visual: growth chart card */
+    .growth {
+      background: var(--ink); border: 1px solid var(--line); border-radius: 24px; padding: 28px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(255,199,0,.08);
+      transform: rotate(1.5deg);
+    }
+    .growth-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .growth-head span { color: var(--muted); font-size: .85rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .growth-head strong { color: var(--yellow); font-size: .85rem; background: rgba(255,199,0,.12); padding: 4px 10px; border-radius: 999px; }
+    .growth svg { width: 100%; height: auto; }
+    .growth .line { stroke-dasharray: 600; stroke-dashoffset: 600; animation: draw 2.2s ease-out .3s forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .growth-legend { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+    .growth-legend div { background: var(--black); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; font-size: .8rem; color: var(--muted); }
+    .growth-legend b { display: block; color: var(--text); font-size: .95rem; }
+
+    /* ---------- Sections ---------- */
+    section { padding: 96px 0; }
+    .section-head { max-width: 680px; margin-bottom: 52px; }
+    .section-head .kicker { color: var(--yellow); font-weight: 700; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 12px; }
+    .section-head h2 { font-size: clamp(1.9rem, 4vw, 2.75rem); line-height: 1.15; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 14px; }
+    .section-head p { color: var(--muted); font-size: 1.08rem; }
+
+    /* Why invest */
+    .grid { display: grid; gap: 20px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .card {
+      background: var(--ink); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 30px; transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: var(--yellow); transform: translateY(-4px); }
+    .icon {
+      width: 52px; height: 52px; border-radius: 12px; background: var(--yellow); color: var(--black);
+      display: grid; place-items: center; margin-bottom: 22px;
+    }
+    .card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+    .card p { color: var(--muted); font-size: .97rem; }
+
+    /* Opportunities — yellow band */
+    .products { background: var(--yellow); color: var(--black); }
+    .products .section-head .kicker { color: var(--black); opacity: .7; }
+    .products .section-head p { color: #3a3200; }
+    .product {
+      background: var(--black); color: var(--text); border-radius: var(--radius); padding: 30px;
+      display: flex; flex-direction: column; gap: 14px; transition: transform .2s, box-shadow .2s;
+    }
+    .product:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,.25); }
+    .product.featured { background: var(--ink-2); outline: 2px solid var(--black); }
+    .product .tag { align-self: flex-start; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--black); background: var(--yellow); padding: 4px 10px; border-radius: 999px; }
+    .product h3 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; }
+    .product p { color: var(--muted); font-size: .97rem; }
+    .product ul { list-style: none; flex: 1; }
+    .product li { font-size: .92rem; padding: 4px 0 4px 22px; position: relative; }
+    .product li::before { content: ""; position: absolute; left: 0; top: 13px; width: 10px; height: 2px; background: var(--yellow); }
+    .product .pick {
+      margin-top: 6px; align-self: flex-start; background: none; border: 0; cursor: pointer; font: inherit;
+      color: var(--yellow); font-weight: 700; display: inline-flex; align-items: center; gap: 8px; padding: 0;
+    }
+    .product .pick:hover { text-decoration: underline; }
+
+    /* Ways to invest */
+    .ways { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .way { padding: 28px; border-left: 3px solid var(--yellow); background: var(--ink); border-radius: 0 var(--radius) var(--radius) 0; }
+    .way h4 { font-size: 1.1rem; margin-bottom: 6px; }
+    .way p { color: var(--muted); font-size: .95rem; }
+
+    /* Process */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: step; }
+    .step { position: relative; padding: 28px; background: var(--ink); border: 1px solid var(--line); border-radius: var(--radius); }
+    .step::before { counter-increment: step; content: "0" counter(step); display: block; font-weight: 900; font-size: 1.9rem; color: var(--yellow); margin-bottom: 8px; }
+    .step h4 { font-size: 1.1rem; margin-bottom: 6px; }
+    .step p { color: var(--muted); font-size: .95rem; }
+
+    /* Form */
+    .invest-wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 48px; align-items: start; }
+    .invest-side h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.15; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 14px; }
+    .invest-side > p { color: var(--muted); font-size: 1.05rem; margin-bottom: 28px; }
+    .direct { list-style: none; display: grid; gap: 12px; }
+    .direct a {
+      display: flex; align-items: center; gap: 14px; background: var(--ink); border: 1px solid var(--line);
+      border-radius: 14px; padding: 14px 16px; transition: border-color .2s;
+    }
+    .direct a:hover { border-color: var(--yellow); }
+    .direct .ic { width: 38px; height: 38px; border-radius: 10px; background: var(--yellow); color: var(--black); display: grid; place-items: center; flex: none; }
+    .direct small { display: block; color: var(--muted); font-size: .8rem; }
+    .direct b { font-weight: 600; font-size: .98rem; }
+    .note { margin-top: 24px; font-size: .85rem; color: var(--muted); border-left: 3px solid var(--line); padding-left: 14px; }
+
+    .invest-form {
+      background: var(--ink-2); border: 1px solid var(--line); border-radius: 24px; padding: 36px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; position: relative; overflow: hidden;
+    }
+    .invest-form::after {
+      content: ""; position: absolute; right: -90px; top: -90px; width: 240px; height: 240px; border-radius: 50%;
+      background: var(--yellow); opacity: .1; pointer-events: none;
+    }
+    .invest-form .full { grid-column: 1 / -1; }
+    .field { display: grid; gap: 6px; position: relative; z-index: 1; }
+    .field > span, .invest-form legend { font-size: .85rem; font-weight: 600; color: var(--muted); }
+    .invest-form input, .invest-form select, .invest-form textarea {
+      width: 100%; font: inherit; font-size: 1rem; color: var(--text); background: var(--black);
+      border: 1px solid var(--line); border-radius: 12px; padding: 13px 15px; transition: border-color .2s;
+    }
+    .invest-form select {
+      appearance: none; cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23FFC700' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 15px center; padding-right: 40px;
+    }
+    .invest-form input:focus, .invest-form select:focus, .invest-form textarea:focus { outline: none; border-color: var(--yellow); }
+    .invest-form textarea { resize: vertical; min-height: 130px; }
+    .invest-form fieldset { border: 0; position: relative; z-index: 1; }
+    .invest-form legend { margin-bottom: 8px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip input { position: absolute; opacity: 0; pointer-events: none; }
+    .chip span {
+      display: inline-block; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line);
+      background: var(--black); color: var(--text); font-size: .92rem; font-weight: 600; cursor: pointer;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    .chip span:hover { border-color: var(--yellow); }
+    .chip input:checked + span { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
+    .chip input:focus-visible + span { outline: 2px solid var(--yellow-soft); outline-offset: 2px; }
+    .invest-form button { justify-self: start; cursor: pointer; font: inherit; position: relative; z-index: 1; }
+    .invest-form button:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+    .form-status { margin: 0; font-size: .95rem; min-height: 1.4em; position: relative; z-index: 1; }
+    .form-status.ok { color: #4ade80; }
+    .form-status.err { color: #f87171; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--line); padding: 56px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-grid h5 { font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; color: var(--yellow); margin-bottom: 14px; }
+    .footer-grid ul { list-style: none; }
+    .footer-grid li { padding: 4px 0; }
+    .footer-grid a { color: var(--muted); font-size: .95rem; transition: color .2s; }
+    .footer-grid a:hover { color: var(--yellow); }
+    .footer-grid .about-small { color: var(--muted); font-size: .95rem; margin-top: 14px; max-width: 320px; }
+    .footer-bottom {
+      border-top: 1px solid var(--line); padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+      color: var(--muted); font-size: .9rem;
+    }
+    .footer-bottom a { color: var(--yellow); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .growth .line { animation: none; stroke-dashoffset: 0; }
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 960px) {
+      .hero .container { grid-template-columns: 1fr; }
+      .growth { transform: none; max-width: 520px; }
+      .grid-3, .grid-4, .ways, .steps { grid-template-columns: 1fr 1fr; }
+      .invest-wrap { grid-template-columns: 1fr; gap: 36px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      body { font-size: 16px; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; align-items: flex-start;
+        gap: 0; background: var(--black); border-bottom: 1px solid var(--line); padding: 8px 20px 20px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 0; }
+      .nav-links .btn { display: inline-flex; margin-top: 8px; padding: 12px 22px; }
+      .hero { padding: 72px 0 64px; }
+      section { padding: 72px 0; }
+      .grid-3, .grid-4, .ways, .steps, .footer-grid { grid-template-columns: 1fr; }
+      .invest-form { grid-template-columns: 1fr; padding: 26px 20px; }
+      .growth-legend { grid-template-columns: 1fr 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="container nav" aria-label="Main navigation">
+      <a href="index.html" class="brand" aria-label="Maoltech home">
+        <span class="brand-mark">M</span>
+        <span>Maol<span class="y">tech</span></span>
+      </a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="invest.html" aria-current="page">Invest</a></li>
+        <li><a href="#invest-form" class="btn">Express interest</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div>
+          <span class="eyebrow">Investor Relations</span>
+          <h1>Invest in the products <span class="hl">powering</span> everyday Nigeria.</h1>
+          <p class="lead">Maoltech builds and runs its own platforms across finance, green energy and mobility. Back the company as a whole, or put your capital behind the product you believe in most.</p>
+          <div class="hero-cta">
+            <a href="#invest-form" class="btn">Express interest
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#opportunities" class="btn btn-outline">View opportunities</a>
+          </div>
+        </div>
+        <div class="growth" aria-hidden="true">
+          <div class="growth-head"><span>Maoltech portfolio</span><strong>3 products</strong></div>
+          <svg viewBox="0 0 320 170" fill="none">
+            <defs>
+              <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#FFC700" stop-opacity=".35"/>
+                <stop offset="1" stop-color="#FFC700" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g stroke="#2a2a2a" stroke-width="1"><path d="M0 40h320M0 85h320M0 130h320"/></g>
+            <path d="M0 150 L40 138 L80 142 L120 112 L160 118 L200 84 L240 70 L280 44 L320 22 L320 170 L0 170Z" fill="url(#fill)"/>
+            <path class="line" d="M0 150 L40 138 L80 142 L120 112 L160 118 L200 84 L240 70 L280 44 L320 22" stroke="#FFC700" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="320" cy="22" r="6" fill="#FFC700"/>
+          </svg>
+          <div class="growth-legend">
+            <div><b>NaijUp</b>Finance</div>
+            <div><b>AWOL</b>Energy</div>
+            <div><b>ShareDrive</b>Mobility</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why invest -->
+    <section id="why" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Why Maoltech</div>
+          <h2>A builder, not just a pitch deck.</h2>
+          <p>We ship real products, run them ourselves and grow them with our own engineering team.</p>
+        </div>
+        <div class="grid grid-4">
+          <article class="card">
+            <div class="icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h3>Products in market</h3>
+            <p>NaijUp and AWOL Energy are live, and ShareDrive is preparing for launch.</p>
+          </article>
+          <article class="card">
+            <div class="icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+            </div>
+            <h3>Large markets</h3>
+            <p>Personal finance, solar power and urban transport are everyday needs for millions of Nigerians.</p>
+          </article>
+          <article class="card">
+            <div class="icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+            </div>
+            <h3>In-house engineering</h3>
+            <p>We design, build and operate every product ourselves, which keeps costs lean and lets us ship fast.</p>
+          </article>
+          <article class="card">
+            <div class="icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Registered &amp; accountable</h3>
+            <p>MAOL TECH CONCEPT is registered with the CAC (RC 9609516), with a founder you can talk to directly.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Opportunities -->
+    <section id="opportunities" class="products">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Opportunities</div>
+          <h2>Choose where your capital goes.</h2>
+          <p>Invest in the parent company for exposure to everything we build, or back a single product.</p>
+        </div>
+        <div class="grid grid-4">
+          <article class="product featured">
+            <span class="tag">Whole portfolio</span>
+            <h3>Maoltech</h3>
+            <p>The parent company behind every product, plus our client development work.</p>
+            <ul>
+              <li>Exposure to all products</li>
+              <li>Client services revenue</li>
+              <li>Future product pipeline</li>
+            </ul>
+            <button type="button" class="pick" data-pick="Maoltech">Invest in Maoltech →</button>
+          </article>
+          <article class="product">
+            <span class="tag">Finance &amp; Media</span>
+            <h3>NaijUp</h3>
+            <p>Nigeria's finance and money platform for news, market data and personal finance tools.</p>
+            <ul>
+              <li>NGX stock data &amp; analysis</li>
+              <li>Calculators &amp; portfolio tracker</li>
+              <li>Community forum</li>
+            </ul>
+            <button type="button" class="pick" data-pick="NaijUp">Invest in NaijUp →</button>
+          </article>
+          <article class="product">
+            <span class="tag">Green Energy</span>
+            <h3>AWOL Energy</h3>
+            <p>An online store for solar, inverters and e-mobility, with installment payments.</p>
+            <ul>
+              <li>Solar panels &amp; inverters</li>
+              <li>Electric bikes &amp; vehicles</li>
+              <li>Pay in installments</li>
+            </ul>
+            <button type="button" class="pick" data-pick="AWOL Energy">Invest in AWOL →</button>
+          </article>
+          <article class="product">
+            <span class="tag">Mobility · Pre-launch</span>
+            <h3>ShareDrive</h3>
+            <p>Carpooling for Lagos that matches drivers and riders on the same route.</p>
+            <ul>
+              <li>Verified riders &amp; drivers</li>
+              <li>Automatic fuel-cost splitting</li>
+              <li>Live tracking &amp; chat</li>
+            </ul>
+            <button type="button" class="pick" data-pick="ShareDrive">Invest in ShareDrive →</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ways to invest -->
+    <section id="ways">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Ways to partner</div>
+          <h2>Flexible structures for different investors.</h2>
+          <p>Tell us what works for you. We're open to discussing terms with individuals, angels, funds and strategic partners.</p>
+        </div>
+        <div class="ways">
+          <div class="way"><h4>Equity</h4><p>Take an ownership stake in Maoltech or a specific product.</p></div>
+          <div class="way"><h4>Revenue share</h4><p>Earn a share of revenue from a product you back.</p></div>
+          <div class="way"><h4>Asset financing</h4><p>Fund inventory such as AWOL Energy's solar and e-mobility stock.</p></div>
+          <div class="way"><h4>Strategic partnership</h4><p>Bring distribution, expertise or infrastructure in exchange for a stake.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">What happens next</div>
+          <h2>From first message to partnership.</h2>
+        </div>
+        <div class="steps">
+          <div class="step"><h4>Express interest</h4><p>Send the form below. It takes about two minutes.</p></div>
+          <div class="step"><h4>Intro call</h4><p>We reply by email to set up a call with the founder.</p></div>
+          <div class="step"><h4>Due diligence</h4><p>We share our numbers, roadmap and plans, and answer your questions.</p></div>
+          <div class="step"><h4>Agree terms</h4><p>We agree terms, sign the paperwork and start building together.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form -->
+    <section id="invest-form" style="padding-top: 0;">
+      <div class="container invest-wrap">
+        <div class="invest-side">
+          <div class="section-head" style="margin-bottom: 0;"><div class="kicker">Get in touch</div></div>
+          <h2>Let's build something <span class="y">big</span> together.</h2>
+          <p>Share a few details and we'll reply by email. Everything you send is kept confidential.</p>
+          <ul class="direct">
+            <li>
+              <a href="mailto:admin@naijup.ng?subject=Investment%20inquiry">
+                <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span>
+                <span><small>Email</small><b>admin@naijup.ng</b></span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+2348059184927">
+                <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+                <span><small>Phone</small><b>+234 805 918 4927</b></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/maoltech" target="_blank" rel="noopener">
+                <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></span>
+                <span><small>Founder</small><b>Mujeeb Olagunju on LinkedIn</b></span>
+              </a>
+            </li>
+          </ul>
+          <p class="note">This page is an invitation to start a conversation, not an offer to sell securities. Any investment is subject to due diligence and a signed agreement.</p>
+        </div>
+
+        <form class="invest-form" id="invest-form-el">
+          <fieldset class="full">
+            <legend>I'm interested in</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="interest" value="Maoltech" checked /><span>Maoltech (company)</span></label>
+              <label class="chip"><input type="radio" name="interest" value="NaijUp" /><span>NaijUp</span></label>
+              <label class="chip"><input type="radio" name="interest" value="AWOL Energy" /><span>AWOL Energy</span></label>
+              <label class="chip"><input type="radio" name="interest" value="ShareDrive" /><span>ShareDrive</span></label>
+              <label class="chip"><input type="radio" name="interest" value="Not sure yet" /><span>Not sure yet</span></label>
+            </div>
+          </fieldset>
+          <label class="field"><span>Full name *</span><input type="text" name="name" maxlength="80" required autocomplete="name" /></label>
+          <label class="field"><span>Email *</span><input type="email" name="email" maxlength="300" required autocomplete="email" /></label>
+          <label class="field"><span>Phone</span><input type="tel" name="phone" maxlength="30" autocomplete="tel" /></label>
+          <label class="field"><span>Company / fund</span><input type="text" name="organization" maxlength="120" autocomplete="organization" /></label>
+          <label class="field">
+            <span>Investor type</span>
+            <select name="investorType">
+              <option>Individual / angel</option>
+              <option>Venture capital fund</option>
+              <option>Corporate / strategic</option>
+              <option>Family office</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Ticket size</span>
+            <select name="range">
+              <option>Prefer to discuss</option>
+              <option>Under ₦5M</option>
+              <option>₦5M – ₦25M</option>
+              <option>₦25M – ₦100M</option>
+              <option>Over ₦100M</option>
+            </select>
+          </label>
+          <label class="field full">
+            <span>Preferred structure</span>
+            <select name="structure">
+              <option>Open to discussion</option>
+              <option>Equity</option>
+              <option>Revenue share</option>
+              <option>Asset financing</option>
+              <option>Strategic partnership</option>
+            </select>
+          </label>
+          <label class="field full"><span>Message *</span><textarea name="message" maxlength="10000" required placeholder="Tell us about yourself, what interests you and any questions you have..."></textarea></label>
+          <button type="submit" class="btn full">Send investment inquiry
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+          <p class="form-status full" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand"><span class="brand-mark">M</span><span>Maol<span class="y">tech</span></span></a>
+          <p class="about-small">Web and mobile app development. MAOL TECH CONCEPT — CAC RC 9609516.</p>
+        </div>
+        <div>
+          <h5>Products</h5>
+          <ul>
+            <li><a href="https://naijup.ng" target="_blank" rel="noopener">NaijUp</a></li>
+            <li><a href="https://awol.naijup.ng" target="_blank" rel="noopener">AWOL Energy</a></li>
+            <li><a href="https://sharedrive.ng" target="_blank" rel="noopener">ShareDrive</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="invest.html">Invest</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <ul>
+            <li><a href="mailto:admin@naijup.ng">admin@naijup.ng</a></li>
+            <li><a href="tel:+2348059184927">+234 805 918 4927</a></li>
+            <li><a href="https://www.linkedin.com/company/maoltech-ltd" target="_blank" rel="noopener">LinkedIn (Company)</a></li>
+            <li><a href="https://www.linkedin.com/in/maoltech" target="_blank" rel="noopener">LinkedIn (Founder)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> <a href="https://www.linkedin.com/company/maoltech-ltd" target="_blank" rel="noopener">Maoltech</a>. All rights reserved.</span>
+        <span>Owned by <a href="https://www.linkedin.com/in/maoltech" target="_blank" rel="noopener">Mujeeb Olagunju</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    const form = document.getElementById('invest-form-el');
+    const formStatus = document.getElementById('form-status');
+
+    // Preselect the product from an opportunity card or ?product= in the URL
+    function pickInterest(value) {
+      const radio = form.querySelector('input[name="interest"][value="' + value + '"]');
+      if (radio) radio.checked = true;
+    }
+    document.querySelectorAll('[data-pick]').forEach(btn => btn.addEventListener('click', () => {
+      pickInterest(btn.dataset.pick);
+      document.getElementById('invest-form').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => form.querySelector('input[name="name"]').focus({ preventScroll: true }), 500);
+    }));
+    const productParam = new URLSearchParams(location.search).get('product');
+    if (productParam) pickInterest(productParam);
+
+    // Investment form -> maol_service public mail (delivered to admin@naijup.ng)
+    const MAIL_SERVICE_URL = 'https://api.sharedrive.ng/maol_payment';
+    const MAIL_API_KEY = 'sgkhlalkjhakdfhkladlfdlkffdskj';
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const button = form.querySelector('button');
+      const label = button.innerHTML;
+      const data = Object.fromEntries(new FormData(form));
+      button.disabled = true;
+      button.textContent = 'Sending...';
+      formStatus.className = 'form-status full';
+      formStatus.textContent = '';
+      try {
+        const res = await fetch(MAIL_SERVICE_URL + '/api/v1/maoltech/public-mail', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-api-key': MAIL_API_KEY },
+          body: JSON.stringify({
+            type: 'investment inquiry',
+            name: data.name,
+            email: data.email,
+            phone: data.phone || undefined,
+            subject: 'Investment inquiry: ' + data.interest + ' from ' + data.name,
+            message: [
+              'Interested in: ' + data.interest,
+              'Organization: ' + (data.organization || '-'),
+              'Investor type: ' + data.investorType,
+              'Ticket size: ' + data.range,
+              'Preferred structure: ' + data.structure,
+              '',
+              data.message
+            ].join('\n'),
+            metadata: {
+              page: location.href,
+              interest: data.interest,
+              organization: data.organization || undefined,
+              investorType: data.investorType,
+              range: data.range,
+              structure: data.structure
+            }
+          })
+        });
+        if (!res.ok) {
+          const body = await res.json().catch(() => null);
+          throw new Error((body && body.error) || 'Unable to send your inquiry, please try again later.');
+        }
+        form.reset();
+        formStatus.classList.add('ok');
+        formStatus.textContent = "Thank you! Your inquiry has been sent. We'll be in touch by email shortly.";
+      } catch (err) {
+        formStatus.classList.add('err');
+        formStatus.textContent = err.message + ' You can also email admin@naijup.ng.';
+      } finally {
+        button.disabled = false;
+        button.innerHTML = label;
+      }
+    });
+  </script>
+</body>
+</html>

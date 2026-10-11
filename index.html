@@ -185,6 +185,22 @@
     .contact-box h2 { font-size: clamp(1.9rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 14px; }
     .contact-box p { color: var(--muted); max-width: 560px; margin: 0 auto 32px; font-size: 1.08rem; }
     .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; position: relative; z-index: 1; }
+    .contact-form {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 640px; margin: 0 auto 32px; text-align: left;
+      position: relative; z-index: 1;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%; font: inherit; font-size: 1rem; color: var(--text); background: var(--black);
+      border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; transition: border-color .2s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--yellow); }
+    .contact-form .full { grid-column: 1 / -1; }
+    .contact-form textarea { resize: vertical; min-height: 140px; }
+    .contact-form button { justify-self: center; cursor: pointer; font: inherit; }
+    .contact-form button:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+    .contact-box .form-status { margin: 0; font-size: .95rem; text-align: center; min-height: 1.4em; }
+    .form-status.ok { color: #4ade80; }
+    .form-status.err { color: #f87171; }
 
     /* Footer */
     footer { border-top: 1px solid var(--line); padding: 56px 0 32px; }
@@ -223,6 +239,7 @@
       section { padding: 72px 0; }
       .grid-3, .steps, .footer-grid { grid-template-columns: 1fr; }
       .contact-box { padding: 48px 22px; }
+      .contact-form { grid-template-columns: 1fr; }
       .hero-stats { gap: 28px; }
     }
   </style>
@@ -243,6 +260,7 @@
         <li><a href="#products">Products</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#process">Process</a></li>
+        <li><a href="invest.html">Invest</a></li>
         <li><a href="#contact" class="btn">Start a project</a></li>
       </ul>
     </nav>
@@ -324,7 +342,7 @@
         <div class="section-head">
           <div class="kicker">Our products</div>
           <h2>Platforms owned &amp; built by Maoltech.</h2>
-          <p>We don't just build for clients. We run our own products across finance, green energy and mobility.</p>
+          <p>We don't just build for clients. We run our own products across finance, green energy and mobility. <a href="invest.html" style="font-weight: 700; text-decoration: underline;">Interested in investing? →</a></p>
         </div>
         <div class="grid grid-3">
           <a class="product" href="https://naijup.ng" target="_blank" rel="noopener">
@@ -399,6 +417,15 @@
         <div class="contact-box">
           <h2>Have a project in mind?</h2>
           <p>Tell us about your web or mobile app idea. We'll get back to you quickly.</p>
+          <form class="contact-form" id="contact-form">
+            <input type="text" name="name" placeholder="Your name" maxlength="80" required />
+            <input type="email" name="email" placeholder="Your email" maxlength="300" required />
+            <input type="tel" name="phone" placeholder="Phone (optional)" maxlength="30" />
+            <input type="text" name="subject" placeholder="Subject" maxlength="200" />
+            <textarea class="full" name="message" placeholder="Tell us about your project..." maxlength="10000" required></textarea>
+            <button type="submit" class="btn full">Send message</button>
+            <p class="form-status full" id="form-status" role="status" aria-live="polite"></p>
+          </form>
           <div class="contact-links">
             <a href="mailto:admin@naijup.ng" class="btn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
@@ -438,6 +465,7 @@
           <ul>
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="invest.html">Invest</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -470,6 +498,49 @@
       links.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
     }));
+
+    // Contact form -> maol_service public mail (delivered to admin@naijup.ng)
+    const MAIL_SERVICE_URL = 'https://api.sharedrive.ng/maol_payment';
+    const MAIL_API_KEY = 'sgkhlalkjhakdfhkladlfdlkffdskj';
+    const form = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const button = form.querySelector('button');
+      const data = Object.fromEntries(new FormData(form));
+      button.disabled = true;
+      button.textContent = 'Sending...';
+      formStatus.className = 'form-status full';
+      formStatus.textContent = '';
+      try {
+        const res = await fetch(MAIL_SERVICE_URL + '/api/v1/maoltech/public-mail', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-api-key': MAIL_API_KEY },
+          body: JSON.stringify({
+            type: 'project inquiry',
+            name: data.name,
+            email: data.email,
+            phone: data.phone || undefined,
+            subject: data.subject || 'New project inquiry from ' + data.name,
+            message: data.message,
+            metadata: { page: location.href }
+          })
+        });
+        if (!res.ok) {
+          const body = await res.json().catch(() => null);
+          throw new Error((body && body.error) || 'Unable to send your message, please try again later.');
+        }
+        form.reset();
+        formStatus.classList.add('ok');
+        formStatus.textContent = "Thanks! Your message has been sent. We'll get back to you soon.";
+      } catch (err) {
+        formStatus.classList.add('err');
+        formStatus.textContent = err.message + ' You can also email admin@naijup.ng.';
+      } finally {
+        button.disabled = false;
+        button.textContent = 'Send message';
+      }
+    });
   </script>
 </body>
 </html>
